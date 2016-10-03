@@ -3,12 +3,12 @@ textarea {
     resize: none;
 }
 
-.next, .previous {
+#next, #previous {
     background-color: #EDF2F4;
 }
-.next {
+#next {
     float: right;
 }
-.previous {
+#previous {
     float: left;
 }
