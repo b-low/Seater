@@ -4,17 +4,26 @@ window.onload = function () {
     // Set the value for if they return to this page
     if (localStorage.names) {
         var existingList = "";
-        JSON.parse(localStorage.names).forEach(function (name) {
-            existingList += name + "\n";
+
+        var names = JSON.parse(localStorage.names);
+        names.forEach(function (name, index) {
+            existingList += name;
+
+            if (index < names.length - 1) {
+                existingList += "\n";
+            }
         });
         input.value = existingList;
     }
 
     var next = document.getElementById("next");
     next.addEventListener("click", function () {
-        var names = input.value.split("\n");
-        names.forEach(function(name, index) {
-            names[index] = name.trim();
+        var names = [];
+
+        input.value.split("\n").forEach(function(name, index) {
+            if (name !== "") {
+                names.push(name.trim());
+            }
         });
         localStorage.names = JSON.stringify(names);
     });

@@ -1,7 +1,12 @@
 var layout = [];
+var randomizedNames = [];
 
 window.onload = function () {
     var grid = document.getElementById("grid");
+
+    if (localStorage.names) {
+        randomizedNames = JSON.parse(localStorage.names)
+    }
 
     for (var i = 0; i < 60; i++) {
         var cell = document.createElement("div");

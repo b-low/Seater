@@ -2,7 +2,6 @@
     margin: 24px auto;
     width: 300px;
     text-align: center;
-    font-size: 0;
 }
 
 .cell {
@@ -12,4 +11,5 @@
     width: 30px;
     height: 30px;
     border: 1px solid #2B2D42;
+    float: left;
 }
