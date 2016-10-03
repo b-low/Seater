@@ -1,14 +1,13 @@
 #grid {
-    margin: 1em 0;
+    margin: 24px auto;
+    width: 300px;
     text-align: center;
-}
-
-.row {
-    margin-top: -7px;
+    font-size: 0;
 }
 
 .cell {
     display: inline-block;
+    margin-top: -1px;
     margin-left: -1px;
     width: 30px;
     height: 30px;
