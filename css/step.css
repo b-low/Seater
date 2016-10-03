@@ -1,0 +1,11 @@
+textarea {
+    margin: 1em 0;
+    resize: none;
+}
+
+.next {
+    padding: 1em;
+    width: 125px;
+    background-color: #EDF2F4;
+    float: right;
+}

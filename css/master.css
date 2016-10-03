@@ -4,7 +4,7 @@ body {
     color: #2B2D42;
 }
 
-body * {
+* {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -13,6 +13,10 @@ body * {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+h2 {
+    font-weight: 500;
 }
 
 #title-banner {
@@ -34,6 +38,46 @@ a {
     padding: 2em;
 }
 
-.next {
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.next-arrow {
     padding: 0 .5em;
+}
+
+.button {
+    background-color: #EDF2F4;
+    cursor: pointer;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0);
+    -webkit-transition: box-shadow .3s;
+    -moz-transition: box-shadow .3s;
+    -ms-transition: box-shadow .3s;
+    -o-transition: box-shadow .3s;
+    transition: box-shadow .3s;
+}
+.button:hover {
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+}
+.button .next-arrow {
+    opacity: 0;
+    -webkit-transform: translateX(-.5em);
+    -moz-transform: translateX(-.5em);
+    -ms-transform: translateX(-.5em);
+    -o-transform: translateX(-.5em);
+    transform: translateX(-.5em);
+    -webkit-transition: transform .3s 0s, opacity .3s;
+    -moz-transition: transform .3s 0s, opacity .3s;
+    -ms-transition: transform .3s 0s, opacity .3s;
+    -o-transition: transform .3s 0s, opacity .3s;
+    transition: transform .3s 0s, opacity .3s;
+}
+.button:hover .next-arrow {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
 }
