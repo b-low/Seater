@@ -1,0 +1,16 @@
+#grid {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.row {
+    margin-top: -7px;
+}
+
+.cell {
+    display: inline-block;
+    margin-left: -1px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2B2D42;
+}
