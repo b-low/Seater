@@ -16,8 +16,7 @@ window.onload = function () {
         input.value = existingList;
     }
 
-    var next = document.getElementById("next");
-    next.addEventListener("click", function () {
+    window.addEventListener("beforeunload", function() {
         var names = [];
 
         input.value.split("\n").forEach(function(name, index) {
