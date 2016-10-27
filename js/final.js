@@ -5,10 +5,19 @@ window.onload = function () {
     randomizeNames();
     populate();
 
-    var randomize = document.getElementById("randomize");
-    randomize.addEventListener("click", function() {
+    var randomizeButton = document.getElementById("randomize");
+    randomizeButton.addEventListener("click", function() {
         randomizeNames();
         populate();
+    });
+
+    var exportButton = document.getElementById("export");
+    exportButton.addEventListener("click", function() {
+        var output = {
+            "names": randomizedNames,
+            "layout": layout
+        };
+        alert("Copy the following and save it somewhere: \n\n" + JSON.stringify(output));
     });
 };
 

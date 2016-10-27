@@ -15,10 +15,14 @@
     border: 1px solid #2B2D42;
 }
 
+.button {
+    display: inline-block;
+}
+
 .navigation {
     text-align: center;
 }
 
-#randomize {
-    display: inline-block;
+#export {
+    float: right;
 }
