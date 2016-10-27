@@ -1,5 +1,7 @@
 var layout = [];
 var randomizedNames = [];
+var mouseDown = false;
+var painting = true;
 
 window.onload = function () {
     var grid = document.getElementById("grid");
@@ -12,7 +14,8 @@ window.onload = function () {
         var cell = document.createElement("div");
         cell.className = "cell";
         cell.gridIndex = i;
-        cell.addEventListener("click", onCellClick);
+        cell.addEventListener("mousedown", onCellMouseDown);
+        cell.addEventListener("mouseover", onCellOver);
 
         if (localStorage.layout) {
             var existingLayout = JSON.parse(localStorage.layout);
@@ -30,21 +33,45 @@ window.onload = function () {
         grid.appendChild(cell);
     }
 
-    var next = document.getElementById("next");
-    next.addEventListener("click", function () {
+    window.addEventListener("beforeunload", function() {
         localStorage.layout = JSON.stringify(layout);
+    });
+    window.addEventListener("mousedown", function(event) {
+        mouseDown = true;
+    });
+    window.addEventListener("mouseup", function(event) {
+        mouseDown = false;
     });
 };
 
-function onCellClick(event) {
+function onCellMouseDown(event) {
     var element = event.currentTarget;
     var index = element.gridIndex;
 
-    if (layout[index]) {
-        element.style.backgroundColor = "transparent";
-        layout[index] = false;
-    } else {
+    painting = !layout[element.gridIndex];
+    if (painting) {
         element.style.backgroundColor = "#8D99AE";
         layout[index] = true;
+    } else {
+        element.style.backgroundColor = "transparent";
+        layout[index] = false;
     }
+}
+
+function onCellOver(event) {
+    if (mouseDown !== true) {
+        return;
+    }
+
+    var element = event.currentTarget;
+    var index = element.gridIndex;
+    setTimeout(function() {
+        if (painting) {
+            element.style.backgroundColor = "#8D99AE";
+            layout[index] = true;
+        } else {
+            element.style.backgroundColor = "transparent";
+            layout[index] = false;
+        }
+    }, 0);
 }

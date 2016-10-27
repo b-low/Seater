@@ -33,7 +33,6 @@ function randomizeNames() {
     }
 
     randomizedNames = shuffled;
-    console.log(shuffled);
 }
 
 function populate() {
