@@ -1,8 +1,24 @@
 var layout = [];
-var randomizedNames = [];
+var names = [];
 
 window.onload = function () {
-    randomizeNames();
+    // Load the names
+    if (!localStorage.names) {
+        return;
+    }
+    names = JSON.parse(localStorage.names);
+
+    // Load the layout
+    if (!localStorage.layout) {
+        return;
+    }
+    layout = JSON.parse(localStorage.layout);
+
+    // Only randomize the class if this page is loading for the first time
+    if (localStorage.hasRandomized === undefined) {
+        randomizeNames();
+        localStorage.hasRandomized = true;
+    }
     populate();
 
     var randomizeButton = document.getElementById("randomize");
@@ -14,19 +30,18 @@ window.onload = function () {
     var exportButton = document.getElementById("export");
     exportButton.addEventListener("click", function() {
         var output = {
-            "names": randomizedNames,
+            "names": names,
             "layout": layout
         };
         alert("Copy the following and save it somewhere: \n\n" + JSON.stringify(output));
     });
+
+    window.addEventListener("beforeunload", function() {
+        localStorage.names = JSON.stringify(names);
+    });
 };
 
 function randomizeNames() {
-    if (!localStorage.names) {
-        return;
-    }
-
-    var names = JSON.parse(localStorage.names);
     var shuffled = [];
 
     for (var i = 0; i < names.length; i++) {
@@ -41,7 +56,7 @@ function randomizeNames() {
         shuffled[swapIndex] = temp;
     }
 
-    randomizedNames = shuffled;
+    names = shuffled;
 }
 
 function populate() {
@@ -54,23 +69,10 @@ function populate() {
         cell.className = "cell";
         cell.gridIndex = i;
 
-        if (localStorage.layout) {
-            var existingLayout = JSON.parse(localStorage.layout);
-
-            if (existingLayout[i]) {
-                layout[i] = true;
-
-                if (namesIndex < randomizedNames.length) {
-                    cell.innerHTML = randomizedNames[namesIndex];
-                    namesIndex++;
-                }
-            } else {
-                layout[i] = false;
-            }
-        } else {
-            layout[i] = false;
+        if (layout[i] && namesIndex < names.length) {
+            cell.innerHTML = names[namesIndex];
+            namesIndex++;
         }
-
         grid.appendChild(cell);
     }
 }
