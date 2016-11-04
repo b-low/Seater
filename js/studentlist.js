@@ -16,7 +16,7 @@ window.addEventListener("load", function() {
         input.value = existingList;
     }
 
-    window.addEventListener("beforeunload", function() {
+    window.addEventListener("pagehide", function() {
         var names = [];
 
         input.value.split("\n").forEach(function(name, index) {

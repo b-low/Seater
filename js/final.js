@@ -36,7 +36,7 @@ window.addEventListener("load", function() {
         alert("Copy the following and save it somewhere: \n\n" + JSON.stringify(output));
     });
 
-    window.addEventListener("beforeunload", function() {
+    window.addEventListener("pagehide", function() {
         localStorage.names = JSON.stringify(names);
     });
 });

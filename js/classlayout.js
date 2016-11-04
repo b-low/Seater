@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
         grid.appendChild(cell);
     }
 
-    window.addEventListener("beforeunload", function() {
+    window.addEventListener("pagehide", function() {
         localStorage.layout = JSON.stringify(layout);
     });
     window.addEventListener("mousedown", function(event) {
