@@ -32,6 +32,7 @@ h2 {
     font-size: 4em;
     font-weight: 400;
     color: #EDF2F4;
+    cursor: pointer;
 }
 
 .wrapper {

@@ -1,7 +1,7 @@
 var layout = [];
 var names = [];
 
-window.onload = function () {
+window.addEventListener("load", function() {
     // Load the names
     if (!localStorage.names) {
         return;
@@ -39,7 +39,7 @@ window.onload = function () {
     window.addEventListener("beforeunload", function() {
         localStorage.names = JSON.stringify(names);
     });
-};
+});
 
 function randomizeNames() {
     var shuffled = [];

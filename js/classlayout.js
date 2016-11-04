@@ -3,7 +3,7 @@ var randomizedNames = [];
 var mouseDown = false;
 var painting = true;
 
-window.onload = function () {
+window.addEventListener("load", function() {
     var grid = document.getElementById("grid");
 
     if (localStorage.names) {
@@ -42,7 +42,7 @@ window.onload = function () {
     window.addEventListener("mouseup", function(event) {
         mouseDown = false;
     });
-};
+});
 
 function onCellMouseDown(event) {
     var element = event.currentTarget;

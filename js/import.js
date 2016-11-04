@@ -1,4 +1,4 @@
-window.onload = function () {
+window.addEventListener("load", function() {
     var input = document.getElementById("class-import-input");
 
     window.addEventListener("beforeunload", function() {
@@ -7,4 +7,4 @@ window.onload = function () {
         localStorage.names = JSON.stringify(parsedJson.names);
         localStorage.layout = JSON.stringify(parsedJson.layout);
     });
-};
+});

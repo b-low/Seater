@@ -1,4 +1,4 @@
-window.onload = function () {
+window.addEventListener("load", function() {
     var input = document.getElementById("student-name-input");
 
     // Set the value for if they return to this page
@@ -26,4 +26,4 @@ window.onload = function () {
         });
         localStorage.names = JSON.stringify(names);
     });
-};
+});
