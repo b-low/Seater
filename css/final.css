@@ -1,18 +1,10 @@
 #grid {
-    margin: 24px auto;
     width: 700px;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .cell {
-    display: inline-block;
-    margin-top: -1px;
-    margin-left: -1px;
     width: 70px;
     height: 70px;
-    border: 1px solid #2B2D42;
 }
 
 .button {

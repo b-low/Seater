@@ -12,3 +12,26 @@ textarea {
 #previous {
     float: left;
 }
+
+.grid-label {
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+}
+
+#grid {
+    margin: 10px auto 24px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    display: inline-block;
+    margin-top: -1px;
+    margin-left: -1px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2B2D42;
+}
