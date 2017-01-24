@@ -1,8 +1,28 @@
 .classroom {
     margin: 1em;
-    width: 10em;
 }
 
 .classroom-title {
+    position: relative;
+    display: inline-block;
+    height: 4rem;
+    margin: 0;
     font-size: 20px;
+    vertical-align: middle;
+}
+.classroom-title:hover {
+    z-index: 10000;
+}
+
+.delete {
+    position: relative;
+    display: inline-block;
+    height: 4rem;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    vertical-align: middle;
+}
+.delete:hover {
+    z-index: 10000;
 }
