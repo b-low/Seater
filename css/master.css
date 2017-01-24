@@ -41,6 +41,7 @@ h2 {
 .content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .next-arrow {

@@ -27,13 +27,22 @@ window.addEventListener("load", function() {
         populate();
     });
 
-    var exportButton = document.getElementById("export");
-    exportButton.addEventListener("click", function() {
-        var output = {
-            "names": names,
-            "layout": layout
-        };
-        alert("Copy the following and save it somewhere: \n\n" + JSON.stringify(output));
+    var saveButton = document.getElementById("save");
+    saveButton.addEventListener("click", function() {
+        var classes = [];
+        if (localStorage.classes) {
+            classes = JSON.parse(localStorage.classes);
+        }
+
+        classes.push(
+            {
+                "names": names,
+                "layout": layout
+            }
+        );
+        localStorage.classes = JSON.stringify(classes);
+
+        alert("Successively saved this classroom as Class " + classes.length)
     });
 
     window.addEventListener("pagehide", function() {
