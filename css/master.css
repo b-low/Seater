@@ -22,16 +22,37 @@ h2 {
 #title-banner {
     margin: 0;
     width: 100%;
-    text-align: center;
     background-color: #8D99AE;
 }
 
 #title {
-    margin: 0;
+    margin: 0 3rem 0 0;
     display: inline;
     font-size: 4em;
     font-weight: 400;
     color: #EDF2F4;
+}
+
+.nav {
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav li {
+    display: inline-block;
+    padding: 0 1em;
+    font-size: 1.5em;
+    color: #EDF2F4;
+}
+.nav li:first-child {
+    padding-left: 0;
+}
+.nav li:last-child {
+    padding-right: 0;
+}
+.nav li:hover {
+    color: #d4d9db;
 }
 
 .wrapper {

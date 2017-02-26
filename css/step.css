@@ -1,6 +1,9 @@
 #title {
     cursor: pointer;
 }
+#title:hover {
+    color: #d4d9db;
+}
 
 textarea {
     margin: 1em 0;
