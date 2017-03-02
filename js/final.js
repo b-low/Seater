@@ -45,6 +45,15 @@ window.addEventListener("load", function() {
         alert("Successively saved this classroom as Class " + classes.length)
     });
 
+    var exportButton = document.getElementById("export");
+    exportButton.addEventListener("click", function() {
+        var output = {
+            "names": names,
+            "layout": layout
+        };
+        alert("Copy the following and save it somewhere: \n\n" + JSON.stringify(output));
+    });
+
     window.addEventListener("pagehide", function() {
         localStorage.names = JSON.stringify(names);
     });

@@ -88,6 +88,9 @@ h2 {
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
 }
 .button .next-arrow {
+    width: 0;
+    margin-right: -40px;
+    float: right;
     opacity: 0;
     -webkit-transform: translateX(-.5em);
     -moz-transform: translateX(-.5em);
@@ -109,6 +112,8 @@ h2 {
     transform: translateX(0);
 }
 .button .previous-arrow {
+    width: 0;
+    margin-left: -45px;
     float: left;
     opacity: 0;
     -webkit-transform: translateX(.5em);

@@ -10,16 +10,6 @@ textarea {
     resize: none;
 }
 
-#next, #previous {
-    background-color: #EDF2F4;
-}
-#next {
-    float: right;
-}
-#previous {
-    float: left;
-}
-
 .grid-label {
     margin: 0;
     font-weight: 400;
@@ -41,4 +31,9 @@ textarea {
     width: 30px;
     height: 30px;
     border: 1px solid #2B2D42;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,20 +1,8 @@
 #grid {
-    width: 700px;
+    width: 690px;
 }
 
 .cell {
     width: 70px;
     height: 70px;
-}
-
-.button {
-    display: inline-block;
-}
-
-.navigation {
-    text-align: center;
-}
-
-#save {
-    float: right;
 }
