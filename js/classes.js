@@ -24,6 +24,7 @@ window.addEventListener("load", function() {
             localStorage.names = JSON.stringify(element.names);
             localStorage.layout = JSON.stringify(element.layout);
             localStorage.hasRandomized = true;
+            localStorage.currentClass = element.innerText;
 
             document.location.href = "final.html";
         });

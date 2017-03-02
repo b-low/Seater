@@ -42,7 +42,9 @@ window.addEventListener("load", function() {
         );
         localStorage.classes = JSON.stringify(classes);
 
-        alert("Successively saved this classroom as Class " + classes.length)
+        alert("Successively saved this classroom as Class " + classes.length);
+        localStorage.currentClass = "Class " + classes.length;
+        updateCurrentClass();
     });
 
     var exportButton = document.getElementById("export");

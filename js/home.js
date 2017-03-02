@@ -4,5 +4,6 @@ window.addEventListener("load", function() {
         localStorage.removeItem("names");
         localStorage.removeItem("layout");
         localStorage.removeItem("hasRandomized");
+        localStorage.removeItem("currentClass");
     });
 });

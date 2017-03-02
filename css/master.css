@@ -19,31 +19,35 @@ h2 {
     font-weight: 500;
 }
 
-#title-banner {
+.nav-wrapper {
     margin: 0;
+    padding: 1em 4em;
     width: 100%;
     background-color: #8D99AE;
+    color: #EDF2F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #title {
-    margin: 0 3rem 0 0;
+    margin: 0 18px 0 0;
     display: inline;
-    font-size: 4em;
+    font-size: 2em;
     font-weight: 400;
-    color: #EDF2F4;
 }
 
 .nav {
     display: inline-block;
-    list-style: none;
     padding-left: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .nav li {
     display: inline-block;
-    padding: 0 1em;
-    font-size: 1.5em;
-    color: #EDF2F4;
+    margin: 0 1em;
+    font-size: 18px;
 }
 .nav li:first-child {
     padding-left: 0;
