@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-    var classes = [];
+    var classes = {};
 
     // Load the classes
     if (!localStorage.classes) {
@@ -8,43 +8,45 @@ window.addEventListener("load", function() {
 
     classes = JSON.parse(localStorage.classes);
 
-    console.log(localStorage);
     var classContainer = document.getElementById("class-container");
-    for (var i = 0; i < classes.length; i++) {
+    console.log(classes);
+    for (className in classes) {
         var classroom = document.createElement("div");
         classroom.className = "classroom";
 
-        var classroomTitle = document.createElement("h2");
-        classroomTitle.innerText = "Class " + (i + 1);
-        classroomTitle.className = "classroom-title button";
-        classroomTitle.layout = classes[i].layout;
-        classroomTitle.names = classes[i].names;
-        classroomTitle.addEventListener("click", function() {
+        console.log(className);
+
+        var classroomName = document.createElement("h2");
+        classroomName.innerText = className;
+        classroomName.className = "classroom-title button";
+        classroomName.layout = classes[className].layout;
+        classroomName.names = classes[className].names;
+        classroomName.addEventListener("click", function() {
             var element = event.currentTarget;
             localStorage.names = JSON.stringify(element.names);
             localStorage.layout = JSON.stringify(element.layout);
             localStorage.hasRandomized = true;
             localStorage.currentClass = element.innerText;
-
             document.location.href = "final.html";
         });
 
         var deleteButton = document.createElement("p");
         deleteButton.innerText = "X";
         deleteButton.className = "delete button";
-        deleteButton.index = i;
+        deleteButton.classroomName = className;
         deleteButton.addEventListener("click", function() {
-            if (confirm("Are you sure you want to delete this class?")) {
-                var element = event.currentTarget;
+            var element = event.currentTarget;
 
-                classes.splice(element.index, 1);
+            if (confirm("Are you sure you want to delete " + element.classroomName + "?")) {
+
+                delete classes[element.classroomName];
                 localStorage.classes = JSON.stringify(classes);
 
                 document.location.reload();
             }
         });
 
-        classroom.appendChild(classroomTitle);
+        classroom.appendChild(classroomName);
         classroom.appendChild(deleteButton);
         classContainer.appendChild(classroom);
     }

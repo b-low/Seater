@@ -29,22 +29,33 @@ window.addEventListener("load", function() {
 
     var saveButton = document.getElementById("save");
     saveButton.addEventListener("click", function() {
-        var classes = [];
+        var classes = {};
+
         if (localStorage.classes) {
             classes = JSON.parse(localStorage.classes);
         }
 
-        classes.push(
-            {
-                "names": names,
-                "layout": layout
+        var defaultName = "Class " + (Object.keys(classes).length + 1);
+        var className = prompt("Please enter a name for your class: ", defaultName);
+
+        if (!className) {
+            return;
+        }
+
+        if (classes[className]) {
+            if (!confirm("A class with this name already exists. Do you wish to overwrite it?")) {
+                return;
             }
-        );
+        }
+
+        classes[className] = {
+            "names": names,
+            "layout": layout
+        };
         localStorage.classes = JSON.stringify(classes);
 
-        alert("Successively saved this classroom as Class " + classes.length);
-        localStorage.currentClass = "Class " + classes.length;
-        updateCurrentClass();
+        alert("Successively saved this classroom as " + className + ".");
+        updateCurrentClass(className);
     });
 
     var exportButton = document.getElementById("export");

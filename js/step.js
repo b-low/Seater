@@ -17,12 +17,13 @@ window.addEventListener("load", function() {
         });
     }
 
-    updateCurrentClass();
+    if (localStorage.currentClass) {
+        updateCurrentClass(localStorage.currentClass);
+    }
 });
 
-function updateCurrentClass() {
-    if (localStorage.currentClass) {
-        var currentClass = document.getElementById("current-class");
-        currentClass.innerHTML = localStorage.currentClass;
-    }
+function updateCurrentClass(className) {
+    localStorage.currentClass = className;
+    var currentClass = document.getElementById("current-class");
+    currentClass.innerHTML = className;
 }
