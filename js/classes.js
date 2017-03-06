@@ -1,15 +1,13 @@
 window.addEventListener("load", function() {
     var classes = {};
+    var classContainer = document.getElementById("class-container");
 
-    // Load the classes
-    if (!localStorage.classes) {
+    if (Object.keys(localStorage.classes).length === 0) {
         return;
     }
 
+    // Load the classes
     classes = JSON.parse(localStorage.classes);
-
-    var classContainer = document.getElementById("class-container");
-    console.log(classes);
     for (className in classes) {
         var classroom = document.createElement("div");
         classroom.className = "classroom";

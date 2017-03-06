@@ -36,6 +36,9 @@ window.addEventListener("load", function() {
         }
 
         var defaultName = "Class " + (Object.keys(classes).length + 1);
+        if (localStorage.currentClass) {
+            defaultName = localStorage.currentClass;
+        }
         var className = prompt("Please enter a name for your class: ", defaultName);
 
         if (!className) {
@@ -66,10 +69,13 @@ window.addEventListener("load", function() {
         };
         alert("Copy the following and save it somewhere: \n\n" + JSON.stringify(output));
     });
+});
 
-    window.addEventListener("pagehide", function() {
-        localStorage.names = JSON.stringify(names);
-    });
+window.addEventListener("pagehide", function() {
+    if (isResetting) {
+        return;
+    }
+    localStorage.names = JSON.stringify(names);
 });
 
 function randomizeNames() {

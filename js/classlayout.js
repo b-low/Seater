@@ -32,16 +32,18 @@ window.addEventListener("load", function() {
 
         grid.appendChild(cell);
     }
-
-    window.addEventListener("pagehide", function() {
-        localStorage.layout = JSON.stringify(layout);
-    });
-    window.addEventListener("mousedown", function(event) {
-        mouseDown = true;
-    });
-    window.addEventListener("mouseup", function(event) {
-        mouseDown = false;
-    });
+});
+window.addEventListener("pagehide", function() {
+    if (isResetting) {
+        return;
+    }
+    localStorage.layout = JSON.stringify(layout);
+});
+window.addEventListener("mousedown", function(event) {
+    mouseDown = true;
+});
+window.addEventListener("mouseup", function(event) {
+    mouseDown = false;
 });
 
 function onCellMouseDown(event) {

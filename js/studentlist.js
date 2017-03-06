@@ -15,15 +15,20 @@ window.addEventListener("load", function() {
         });
         input.value = existingList;
     }
+});
 
-    window.addEventListener("pagehide", function() {
-        var names = [];
+window.addEventListener("pagehide", function() {
+    if (isResetting) {
+        return;
+    }
 
-        input.value.split("\n").forEach(function(name, index) {
-            if (name !== "") {
-                names.push(name.trim());
-            }
-        });
-        localStorage.names = JSON.stringify(names);
+    var input = document.getElementById("student-name-input");
+    var names = [];
+
+    input.value.split("\n").forEach(function(name, index) {
+        if (name !== "") {
+            names.push(name.trim());
+        }
     });
+    localStorage.names = JSON.stringify(names);
 });

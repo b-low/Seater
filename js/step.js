@@ -8,6 +8,10 @@ window.addEventListener("load", function() {
 
     var navLinks = document.getElementsByClassName("link");
     for (var i = 0; i < navLinks.length; i++) {
+        if (navLinks[i].className === "link create-button") {
+            continue;
+        }
+
         navLinks[i].addEventListener("click", function(event) {
             if (confirm("You are currently leaving the class setup process and may lose all unsaved changes. Continue?")) {
                 localStorage.removeItem("currentClass");
