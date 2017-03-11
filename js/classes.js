@@ -7,6 +7,7 @@ window.addEventListener("load", function() {
     }
 
     // Load the classes
+    classContainer.innerText = "";
     classes = JSON.parse(localStorage.classes);
     for (className in classes) {
         var classroom = document.createElement("div");
