@@ -1,5 +1,5 @@
 # Seater
-Seat assignment generator created at https://www.punahou.edu
+Lightweight seat assignment generator created at https://www.punahou.edu
 
 Use by downloading this repository and opening `index.html` in a web browser. Class information is stored in your browser's storage, but it is possible to export/import classes to back them up.
 
