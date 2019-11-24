@@ -67,7 +67,7 @@ window.addEventListener("load", function() {
             "names": names,
             "layout": layout
         };
-        alert("Copy the following and save it somewhere: \n\n" + JSON.stringify(output));
+        prompt("Copy the following and save it somewhere:", JSON.stringify(output));
     });
 });
 
